@@ -1,0 +1,16 @@
+{
+  "name": "recode-cadastro",
+  "version": "1.0.0",
+  "description": "página de cadastro",
+  "main": "index.js",
+  "repository": "https://github.com/vxfontes/node-cadastro.git",
+  "author": "Vanessa <nessa1vane@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
