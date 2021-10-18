@@ -11,7 +11,11 @@ module.exports = {
         }
     },
 
-    app(req, res) {
-	    res.sendFile(__dirname + 'cadastro.html');
+    index (req, res) {
+        res.send("Servidor ta ok!");
+    },
+
+    exibir(req, res) {
+	    res.sendFile(__dirname + '/cadastro.html');
     }
 };
