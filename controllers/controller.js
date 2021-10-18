@@ -9,13 +9,14 @@ module.exports = {
     cadastro(req, res) {
 
         let { nome, sobrenome, nota1, nota2 } = req.body;
+        
 
-        if (nome == " " || sobrenome == " " || nota1 == " " || nota2 == " ") {
-            res.json[{ Response: false }];
+        if (nome == "" || sobrenome == "" || nota1 == 0 || nota2 == 0) {
+            res.json({ Response: false });
         } else {
-            medianotas = (nota1 + nota2) / 2;
+            medianotas = (Number(nota1)+Number(nota2))/2;
             nomesobrenome = nome + "/" + sobrenome;
-            res.json[{Response : "Usuário cadastrado" }];
+            res.json({Response : "Usuário cadastrado", nome: nomesobrenome, media: medianotas});
         }
     },
 
