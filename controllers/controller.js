@@ -10,16 +10,28 @@ module.exports = {
         
         let {nome,sobrenome,nota1, nota2} = req.body;
 
-        if (nome == " " || sobrenome == " ") {
-            res.json[{Response: false}];
-        } else {
-            nomesobrenome = nome + "/" + sobrenome;
+        function verificanota () {
+            if (nota1 == " " || nota2 == " ") {
+                return false;
+            } else {
+                medianotas = (nota1+nota2)/2;
+                return true;
+            }
+        }
+        
+        function verificanome () {
+            if (nome == " " || sobrenome == " ") {
+                return false;
+            } else {
+                nomesobrenome = nome + "/" + sobrenome;
+                return true;
+            }
         }
 
-        if (nota1 == " " || nota2 == " ") {
-            res.json[{Response: false}];
+        if (verificanome() == true && verificanota() == true){
+            res.json [{Response: "Aluno cadastrado com sucesso"}];
         } else {
-            medianotas = (nota1+nota2)/2;
+            res.json[{Response: "Cadastro não realizado"}];
         }
     },
 
