@@ -2,13 +2,12 @@ const { application } = require("express");
 
 module.exports = {
     cadastro (req, res) {
-        let {nome, sobrenome} = req.body;
+        
+        let {nota1} = req.body
+        var nota12 = 23;
 
-        if( nome == "" || sobrenome == "") {
-            res.json({ response: false});
-        } else {
-           res.json({ response: true, usuario: { nome: nome, sobrenome: sobrenome }}); 
-        }
+        res.send(nota1);
+        
     },
 
     index (req, res) {
