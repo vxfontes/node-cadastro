@@ -1,13 +1,26 @@
 const { application } = require("express");
 
+let nomesobrenome,medianotas;
+const usuarios = [{nome: nomesobrenome, media: medianotas}];
+
+
+
 module.exports = {
     cadastro (req, res) {
         
-        let {nota1} = req.body
-        var nota12 = 23;
+        let {nome,sobrenome,nota1, nota2} = req.body;
 
-        res.send(nota1);
-        
+        if (nome == " " || sobrenome == " ") {
+            res.json[{Response: false}];
+        } else {
+            nomesobrenome = nome + "/" + sobrenome;
+        }
+
+        if (nota1 == " " || nota2 == " ") {
+            res.json[{Response: false}];
+        } else {
+            medianotas = (nota1+nota2)/2;
+        }
     },
 
     index (req, res) {
