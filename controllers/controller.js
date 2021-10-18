@@ -1,45 +1,33 @@
 const { application } = require("express");
 
-let nomesobrenome,medianotas;
-const usuarios = [{nome: nomesobrenome, media: medianotas}];
+let nomesobrenome, medianotas;
+const usuarios = [{ nome: nomesobrenome, media: medianotas }];
 
 
 
 module.exports = {
-    cadastro (req, res) {
-        
-        let {nome,sobrenome,nota1, nota2} = req.body;
+    cadastro(req, res) {
 
-        function verificanota () {
+        let { nome, sobrenome, nota1, nota2 } = req.body;
+
+        if (nome == " " || sobrenome == " ") {
             if (nota1 == " " || nota2 == " ") {
-                return false;
+                res.json[{ Response: false }];
             } else {
-                medianotas = (nota1+nota2)/2;
-                return true;
+                medianotas = (nota1 + nota2) / 2;
             }
-        }
-        
-        function verificanome () {
-            if (nome == " " || sobrenome == " ") {
-                return false;
-            } else {
-                nomesobrenome = nome + "/" + sobrenome;
-                return true;
-            }
+        } else {
+            nomesobrenome = nome + "/" + sobrenome;
         }
 
-        if (verificanome() == true && verificanota() == true){
-            res.json [{Response: "Aluno cadastrado com sucesso"}];
-        } else {
-            res.json[{Response: "Cadastro não realizado"}];
-        }
+        res.json[{Response : "Usuário cadastrado" }];
     },
 
-    index (req, res) {
+    index(req, res) {
         res.send("Servidor ta ok!");
     },
 
     exibir(req, res) {
-	    res.sendFile(__dirname + '/cadastro.html');
+        res.sendFile(__dirname + '/cadastro.html');
     }
 };
