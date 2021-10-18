@@ -10,17 +10,13 @@ module.exports = {
 
         let { nome, sobrenome, nota1, nota2 } = req.body;
 
-        if (nome == " " || sobrenome == " ") {
-            if (nota1 == " " || nota2 == " ") {
-                res.json[{ Response: false }];
-            }
+        if (nome == " " || sobrenome == " " || nota1 == " " || nota2 == " ") {
+            res.json[{ Response: false }];
         } else {
             medianotas = (nota1 + nota2) / 2;
             nomesobrenome = nome + "/" + sobrenome;
             res.json[{Response : "Usuário cadastrado" }];
         }
-
-        
     },
 
     index(req, res) {
