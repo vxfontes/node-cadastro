@@ -11,7 +11,7 @@ module.exports = {
         let { nome, sobrenome, nota1, nota2 } = req.body;
         
 
-        if (nome == "" || sobrenome == "" || nota1 == 0 || nota2 == 0) {
+        if (nome == "" || sobrenome == "" || nota1 == "" || nota2 == "") {
             res.json({ Response: false });
         } else {
             medianotas = (Number(nota1)+Number(nota2))/2;
