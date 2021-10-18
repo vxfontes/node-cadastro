@@ -13,14 +13,14 @@ module.exports = {
         if (nome == " " || sobrenome == " ") {
             if (nota1 == " " || nota2 == " ") {
                 res.json[{ Response: false }];
-            } else {
-                medianotas = (nota1 + nota2) / 2;
             }
         } else {
+            medianotas = (nota1 + nota2) / 2;
             nomesobrenome = nome + "/" + sobrenome;
+            res.json[{Response : "Usuário cadastrado" }];
         }
 
-        res.json[{Response : "Usuário cadastrado" }];
+        
     },
 
     index(req, res) {
