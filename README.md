@@ -1,4 +1,4 @@
-# node-cadastro
+# Cadastro
 projeto de cadastro sem a utilização de bancos de dados
 
 - separação das rotas e dos controllers
